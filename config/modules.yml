@@ -1,0 +1,6 @@
+ozproject:
+  modules:
+    page:
+      provider: "\Oz\Project\Module\Page\ServiceProvider"
+      disabled: false
+
