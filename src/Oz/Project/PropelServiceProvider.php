@@ -9,7 +9,7 @@
 namespace Oz\Project;
 
 
-use Silex\Application;
+use Silex\Application as App;
 use Silex\ServiceProviderInterface;
 
 class PropelServiceProvider implements ServiceProviderInterface
@@ -22,7 +22,7 @@ class PropelServiceProvider implements ServiceProviderInterface
      *
      * @param Application $app An Application instance
      */
-    public function register(Application $app)
+    public function register(App $app)
     {
         $root = $app[Config::ROOT];
         require_once $root . '/config.php';
@@ -35,7 +35,7 @@ class PropelServiceProvider implements ServiceProviderInterface
      * and should be used for "dynamic" configuration (whenever
      * a service must be requested).
      */
-    public function boot(Application $app)
+    public function boot(App $app)
     {
         // TODO: Implement boot() method.
     }

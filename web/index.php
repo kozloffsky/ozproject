@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new \Oz\Project\Application(array(
-    'config.root' => __DIR__ . '/../config'
+    \Oz\Project\Config::ROOT => __DIR__ . '/../config'
 ));
 
 $app->get(

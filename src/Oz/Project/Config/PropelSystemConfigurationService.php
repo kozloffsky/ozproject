@@ -20,15 +20,15 @@ class PropelSystemConfigurationService implements SystemConfigurationServiceInte
         if(!$entity){
             return null;
         }
-        return $entity->getValue();
+        return unserialize($entity->getValue());
     }
 
     public function set($path, $value)
     {
         $entity = ConfigEntityQuery::create()
-            ->filterByPath($$path)
+            ->filterByPath($path)
             ->findOneOrCreate();
-        $entity->setValue($value);
+        $entity->setValue(serialize($value));
         $entity->save();
     }
 } 

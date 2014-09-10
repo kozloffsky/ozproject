@@ -11,7 +11,6 @@ namespace Oz\Project;
 
 use Oz\Project\Config\ModulesConfiguration;
 use Oz\Project\Config\PropelSystemConfigurationService;
-use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\Config\FileLocator;
 
@@ -31,7 +30,7 @@ class ConfigurationServiceProvider implements ServiceProviderInterface
      *
      * @param Application $app An Application instance
      */
-    public function register(Application $app)
+    public function register(\Silex\Application $app)
     {
         $app[Config::FILE_LOCATOR] = $app->share(
             function () use ($app) {
@@ -59,7 +58,7 @@ class ConfigurationServiceProvider implements ServiceProviderInterface
      * and should be used for "dynamic" configuration (whenever
      * a service must be requested).
      */
-    public function boot(Application $app)
+    public function boot(\Silex\Application $app)
     {
 
     }
