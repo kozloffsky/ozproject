@@ -18,6 +18,6 @@ class Application extends \Silex\Application
     {
         parent::__construct($values);
         $this->register(new ServiceControllerServiceProvider());
-
+        $this->register(new PropelServiceProvider());
     }
 }

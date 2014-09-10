@@ -3,7 +3,23 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd">
     <!-- table definitions go here -->
-    <table name="config">
-        <column name="path"/>
+
+    <!-- Config item represents key value pair of system configuration -->
+    <table name="config_item" phpName="ConfigEntity">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="path" type="varchar" size="255" required="true"/>
+        <column name="value" type="varchar"/>
+        <unique>
+            <unique-column name="path"/>
+        </unique>
+    </table>
+
+    <table name="modules" phpName="ModuleEntity">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="name" type="varchar" size="255" required="true"/>
+        <column name="description" type="LONGVARCHAR" required="true"/>
+        <unique>
+            <unique-column name="name"/>
+        </unique>
     </table>
 </database>
