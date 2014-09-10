@@ -1,14 +1,20 @@
 {
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/propelorm/Propel2"
+        }
+    ],
     "require": {
         "silex/silex": "v1.2.1",
         "twig/twig": ">=1.8,<2.0-dev",
         "symfony/twig-bridge": "~2.3",
         "symfony/validator": "~2.3",
         "symfony/security": "~2.3",
-        "symfony/config": "~2.5",
+        "symfony/config": "~2.4",
         "swiftmailer/swiftmailer": ">=4.1.2,<4.2-dev",
         "monolog/monolog": ">=1.0.0",
-        "propel/propel": "~2.0@dev"
+        "propel/propel": "dev-master"
     },
 
     "autoload": {

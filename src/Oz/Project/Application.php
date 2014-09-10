@@ -9,7 +9,6 @@
 namespace Oz\Project;
 
 use Silex\Provider\ServiceControllerServiceProvider;
-use Symfony\Component\Config\FileLocator;
 
 class Application extends \Silex\Application
 {
@@ -20,7 +19,5 @@ class Application extends \Silex\Application
         parent::__construct($values);
         $this->register(new ServiceControllerServiceProvider());
 
-        $locator = new FileLocator(array($this[Config::ROOT]));
-        var_dump($locator->locate('modules.yml', null));
     }
 }
