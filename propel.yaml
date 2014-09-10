@@ -1,10 +1,37 @@
 propel:
+  paths:
+      # Directory where the project files (`schema.xml`, etc.) are located.
+      # Default value is current path #
+      projectDir:  "."
+
+      # The directory where Propel expects to find your `schema.xml` file.
+      schemaDir: %projectDir%
+
+      # The directory where Propel should output classes, sql, config, etc.
+      # Default value is current path #
+      outputDir: %projectDir%
+
+      # The directory where Propel should output generated object model classes.
+      phpDir: %projectDir%/src
+
+      # The directory where Propel should output the compiled runtime configuration.
+      phpConfDir: %projectDir%/config
+
+      # The directory where Propel should output the generated DDL (or data insert statements, etc.)
+      sqlDir: %projectDir%/generated-sql
+
+      # Directory in which your composer.json resides
+      composerDir: %projectDir%
+
   database:
       connections:
-          default:
+          ozshop:
               adapter: mysql
               classname: Propel\Runtime\Connection\ConnectionWrapper
               dsn: "mysql:host=localhost;dbname=my_db_name"
               user: my_db_user
               password: s3cr3t
               attributes:
+
+  generator:
+      defaultConnection: ozshop
