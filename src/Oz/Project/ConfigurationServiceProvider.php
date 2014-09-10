@@ -10,6 +10,7 @@ namespace Oz\Project;
 
 
 use Oz\Project\Config\ModulesConfiguration;
+use Oz\Project\Config\PropelSystemConfigurationService;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\Config\FileLocator;
@@ -41,6 +42,12 @@ class ConfigurationServiceProvider implements ServiceProviderInterface
         $app[Config::MODULES_CONFIGURATION] = $app->share(
             function () {
                 return new ModulesConfiguration();
+            }
+        );
+
+        $app[Config::SYS_CONFIG] = $app->share(
+            function () {
+                return new PropelSystemConfigurationService();
             }
         );
     }

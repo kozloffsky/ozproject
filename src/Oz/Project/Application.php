@@ -17,6 +17,7 @@ class Application extends \Silex\Application
     public function __construct(array $values = array())
     {
         parent::__construct($values);
+        $this->register(new ConfigurationServiceProvider());
         $this->register(new ServiceControllerServiceProvider());
         $this->register(new PropelServiceProvider());
     }
